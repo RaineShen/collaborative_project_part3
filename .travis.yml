@@ -1,5 +1,6 @@
 language: python
 python:
-- "3.8"
+  - "3.8"
 script:
-- python test_nutrients.py
+  - python unittest_Monitoring.py
+  - python unittest_Records.py
