@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[1]:
-pip install pygal
+
 import pygal
 import unittest
 from Fittness.calories_burn import records as re
