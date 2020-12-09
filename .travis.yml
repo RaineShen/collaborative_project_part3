@@ -3,6 +3,7 @@ python:
   - "3.8"
 install:
   - pip install pygal
+  - pip install ipython
 script:
   - python unittest_Monitoring.py
   - python unittest_Records.py
