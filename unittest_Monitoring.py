@@ -3,7 +3,7 @@
 
 # In[1]:
 
-
+import pygal
 import unittest
 from Fittness.calories_burn import records as re
 from Fittness.calories_burn import monitoring 
