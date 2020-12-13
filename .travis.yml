@@ -7,3 +7,6 @@ install:
 script:
   - python unittest_Monitoring.py
   - python unittest_Records.py
+  - python cv_testsuit.py
+  - python -m coverage run cb_testsuit.py
+  - python -m coverage report
