@@ -193,5 +193,3 @@ def calorieTrack(lst1, lst2, num):
     except:
         print('There is an error') 
     
-
-entry()

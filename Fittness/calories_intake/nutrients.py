@@ -244,5 +244,3 @@ def bodyNeeds(w, h, s, age, proAmt, fatAmt, carbAmt, fac):
         print('Value Error:', ex)
     except:
         print('There is an error') 
-            
-entry()
