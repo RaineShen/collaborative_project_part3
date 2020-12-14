@@ -101,7 +101,7 @@ class Records:
         """
         time= exercise time (in mintues)
         intensity has three levels= 3(Light),4(Moderate),7(Vigorous)
-        Total calories burned = Duration (in minutes)*(MET*3.5*weight in kg)/200
+        Total calories burned = Duration (in minutes)*(MET*3.5*weight in kg)/200. 
         """
         x=1
         while x!=0:
