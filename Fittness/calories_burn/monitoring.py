@@ -1,6 +1,5 @@
 import pygal
 from Fittness.calories_burn import records
-
 from IPython.display import SVG, display
 
 
@@ -14,10 +13,36 @@ class Monitoring(records.Records):
         self.calories=calories
         self.weight_list=[weight]
         self.calories_list=[calories]
+        try:
+            if self.age<0:
+                raise ValueError("please enter a valid age")
+        except ValueError as ex:
+            print("Message:", ex)
+
+        try:
+
+            if self.height<50 or self.height>210:
+                raise ValueError("please enter a valid height in cm")
+        except ValueError as ex:
+            print("Message:", ex)
+
+        try:
+            if self.weight<0:
+                raise ValueError("invalid weight")
+        except ValueError:
+            print("please enter a valid weight")
+
+        try:
+            if self.calories<0:
+                raise ValueError("invalid calories")
+        except ValueError:
+            print("please enter a valid invalid calroies")
+
     
     def new_weight(self,newweight):
         self.weight_list.append(newweight)
         return self.weight_list
+
     
     def new_calory(self,newcalory):
         self.calories_list.append(newcalory)
