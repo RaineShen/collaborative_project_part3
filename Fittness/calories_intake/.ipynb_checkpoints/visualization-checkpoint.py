@@ -42,7 +42,7 @@ def entry():
         protList = [float(x) for x in lstA]
         protCount = len(protList)
         if protCount < 7:
-            raise LengthError(protCount)
+            raise LengthError(fatCount)
         
         entry_fats = input('Enter your daily fat intake in gram, separated by spaces')
         if ' ' not in entry_fats:
@@ -61,42 +61,40 @@ def entry():
         carbCount = len(carbList)
         if carbCount < 7:
             raise LengthError(carbCount)
-            
-        length = len(protList)  
-        if not all(len(lst) == length for lst in [protList, fatList, carbList]):
-            raise EqualityError('protList, fatList, carbList')
-            
-        protSum = sum(protList)
-        fatSum = sum(fatList)
-        carbSum = sum(carbList)
-        total_carlo = (protSum+carbSum)*4 + fatSum*9
-        avg_carlo = total_carlo / len(protList)
-
-        dayList = [x+1 for x in range(length)]
-        protListC = [x*4 for x in protList]
-        fatListC = [x*9 for x in fatList]
-        carbListC = [x*4 for x in carbList]
-        multiLists = [protListC, fatListC, carbListC]
-        caloList = [sum(k) for k in zip(*multiLists)]
-        
-        return caloList
-
-        nutriTrack(protList, fatList, carbList, dayList)
-        calorieTrack(caloList, dayList, avg_carlo)
-
-        
+       
     except InputError as ex:
         print('Exception raised:', ex.value, 'is a invalid input. A list of number is required')
     except LengthError as ex:
         print('Exception raised:', ex.value, 'is not enough for tracking')
     except EqualityError as ex:
         print('Exception raised: length of', ex.value, 'are not equal')
-#     except ValueError as ex:
-#         print('Value Error:', ex)
     except:
         print('There is an error')
         
+    length = len(protList)
+    if (protCount or fatCount or carbCount) < 7:
+        raise ValueError('We need records for at least a week')
     
+    elif not all(len(lst) == length for lst in [protList, fatList, carbList]):
+        raise ValueError('Number of records for all 3 nutrients need to be the same')
+        
+    protSum = sum(protList)
+    fatSum = sum(fatList)
+    carbSum = sum(carbList)
+    total_carlo = (protSum+carbSum)*4 + fatSum*9
+    avg_carlo = total_carlo / len(protList)
+
+    dayList = [x+1 for x in range(length)]
+    protListC = [x*4 for x in protList]
+    fatListC = [x*9 for x in fatList]
+    carbListC = [x*4 for x in carbList]
+    multiLists = [protListC, fatListC, carbListC]
+    caloList = [sum(k) for k in zip(*multiLists)]
+
+    nutriTrack(protList, fatList, carbList, dayList)
+    calorieTrack(caloList, dayList, avg_carlo)
+    
+    return caloList
 
 def nutriTrack(lst1, lst2, lst3, lst4):
     
@@ -186,8 +184,6 @@ def calorieTrack(lst1, lst2, num):
         
     except InputError as ex:
         print('Exception raised:', ex.value, 'contains non-numeric value')
-#     except LengthError as ex:
-#         print('Exception raised:', ex.value, 'is not enough for tracking')
     except EqualityError as ex:
         print('Exception raised: length of', ex.value, 'are not equal')
     except:
