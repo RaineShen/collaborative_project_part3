@@ -11,8 +11,47 @@ class Records:
         self.name=name
         self.age=age
         self.bmi_range="n"
+        try:
+            if self.age<0:
+                raise ValueError("please enter a valid age")
+        except ValueError as ex:
+            print("Message:", ex)
+
+        # try:
+        #     if self.gender!="female" or self.gender!="male":
+        #         raise ValueError("plase enter your gender, male or female")
+        # except ValueError as ex:
+        #     print("Message:", ex)
+            
+        try:
+
+            if self.height<50 or self.height>210:
+                raise ValueError("please enter a valid height in cm")
+        except ValueError as ex:
+            print("Message:", ex)
+        
+        try:
+            if self.weight<10 or self.weight>300:
+                raise ValueError("please enter a valid weight in kg")
+
+        except ValueError as ex:
+            print("Message:", ex)
+
+
+            
+
+
+            
+
+
+
+
+
     
-    
+
+
+
+
     def display(self):
         return "Name: {} Age: {} Gender:{} Height: {}cm Wegiht: {}kg".format(self.name,self.age,self.gender,self.height,self.weight)
      
@@ -56,12 +95,13 @@ class Records:
             bmr= 66 + (13.7*self.weight) + (5*self.height) - (6.8*self.age)
         self.bmr=bmr
         return "Hello,{} your BMR is around {} Kcal/day".format(self.name,bmr)
+     
     
     def totalcal(self):
         """
         time= exercise time (in mintues)
         intensity has three levels= 3(Light),4(Moderate),7(Vigorous)
-        Total calories burned = Duration (in minutes)*(MET*3.5*weight in kg)/200
+        Total calories burned = Duration (in minutes)*(MET*3.5*weight in kg)/200. 
         """
         x=1
         while x!=0:
