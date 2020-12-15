@@ -7,10 +7,10 @@
 https://pypi.org/project/Fittness/
 
 **Screenshot of code coverage for Intake Package**
-![Alt text](https://github.com/RaineShen/data533Lab4/blob/main/Fittness/calories_intake/Code_Coverage_Intake.PNG "Screenshot for Calories_Intake")
+![Alt text](https://github.com/RaineShen/data533Lab4/blob/main/Fittness/calories_intake/Code_Coverage_Intake.PNG)
 
 **Screenshot of code coverage for Burn Package**
-![Alt text](https://github.com/RaineShen/data533Lab4/blob/main/Fittness/calories_burn/Burn_coverage.png "Screenshot for Calories_Burn")
+![Alt text](https://github.com/RaineShen/data533Lab4/blob/main/Fittness/calories_burn/Burn_coverage.png)
 
 ### **Subpackage - calories_intake**
 
