@@ -152,20 +152,18 @@ def calCalories(protI, fatI, carbI):
         carb = Carbohydrate('carbohydrate', carbI, 4)
         if isinstance(carbI, str):
             raise ValueError('It is not a numeric value')
-            
-        print('Summary:')
-        prot.displaypCalories()
-        fat.displayfCalories()
-        carb.displaycCalories()
-        totalCalo = prot.protCal() + fat.fatCal() + carb.carbCal()
-        return totalCalo
     
     except ValueError as ex:
         print('Value Error:', ex)
     except:
         print('There is an error')
         
-
+#     print('Summary:')
+#     prot.displaypCalories()
+#     fat.displayfCalories()
+#     carb.displaycCalories()
+    totalCalo = prot.protCal() + fat.fatCal() + carb.carbCal()
+    return totalCalo
     
 def bodyNeeds(w, h, s, age, proAmt, fatAmt, carbAmt, fac):
     

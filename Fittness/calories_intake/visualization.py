@@ -42,7 +42,7 @@ def entry():
         protList = [float(x) for x in lstA]
         protCount = len(protList)
         if protCount < 7:
-            raise LengthError(fatCount)
+            raise LengthError(protCount)
         
         entry_fats = input('Enter your daily fat intake in gram, separated by spaces')
         if ' ' not in entry_fats:
