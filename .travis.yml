@@ -1,5 +1,8 @@
 language: python
 python:
 - "3.8"
+install:
+- pip install bokeh
 script:
 - python test_nutrients.py
+- python test_visualization.py
