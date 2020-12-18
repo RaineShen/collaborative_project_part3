@@ -1,19 +1,14 @@
 language: python
 python:
-<<<<<<< HEAD
 - "3.8"
 install:
 - pip install bokeh
+- pip install pygal
+- pip install ipython
 script:
 - python test_nutrients.py
 - python test_visualization.py
-=======
-  - "3.8"
-install:
-  - pip install pygal
-  - pip install ipython
-script:
-  - python unittest_Monitoring.py
-  - python unittest_Records.py
-  - python cb_testsuit.py
->>>>>>> burntesting
+- python testSuite_Intake.py
+- python unittest_Monitoring.py
+- python unittest_Records.py
+- python cb_testsuit.py
