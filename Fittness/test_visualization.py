@@ -73,6 +73,7 @@ class TestVisualization(unittest.TestCase):
         self.v6 = None
         self.v7 = None
 
+        
     @classmethod
     def tearDownClass(cls):
         cls.lst1 = None
